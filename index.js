@@ -33,7 +33,7 @@ app.get('/', async (req, res) => {
             "frames": [
                 {
                     "text": responseText,
-                    "icon": "i647" // Spotify logo.
+                    "icon": "i35103" // Spotify logo.
                 }
             ]
         });
