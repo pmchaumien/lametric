@@ -23,9 +23,10 @@ app.get('/', async (req, res) => {
         if (nowPlaying['is_playing'] && nowPlaying.item && nowPlaying.item.name && nowPlaying.item.artists) {
             const track = nowPlaying.item.name;
             const artists = nowPlaying.item.artists.map(artist => artist.name).join(', ');
+            const device = nowPlaying.device.name;
             responseText = `${track} - ${artists}`;
             if (allowedDevices && !allowedDevices.includes(nowPlaying.device.name)) {
-                responseText = '-';
+                responseText = `${track} - ${artists} - ${device}`;
             }
         }
         console.log(responseText);
